@@ -69,10 +69,10 @@ export default function PairingSetup() {
         <div className="settings-section-title">En couple avec</div>
         <div className="partner-card">
           <div className="partner-avatar">
-            {getInitials(partnerData.displayName)}
+            {getInitials(partnerData.displayName || partnerData.email)}
           </div>
           <div className="partner-info">
-            <div className="partner-name">{partnerData.displayName}</div>
+            <div className="partner-name">{partnerData.displayName || partnerData.email}</div>
             <div className="partner-email">{partnerData.email}</div>
           </div>
           <button className="btn btn-secondary btn-sm" onClick={handleUnpair} disabled={loading}>
