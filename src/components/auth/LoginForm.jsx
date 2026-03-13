@@ -27,7 +27,7 @@ export default function LoginForm({ onSwitchToRegister }) {
         <div className="auth-logo-icon">
           <Calendar size={32} />
         </div>
-        <h1 className="gradient-text">Nous Deux</h1>
+        <h1 className="gradient-text">CalenDuo</h1>
         <p>Votre calendrier partagé</p>
       </div>
 

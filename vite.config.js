@@ -9,8 +9,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['calendar-icon.svg', 'icon-192.png', 'icon-512.png'],
       manifest: {
-        name: 'Nous Deux — Calendrier Partagé',
-        short_name: 'Nous Deux',
+        name: 'CalenDuo — Calendrier Partagé',
+        short_name: 'CalenDuo',
         description: 'Calendrier partagé pour couples',
         theme_color: '#7c3aed',
         background_color: '#0f0a1a',

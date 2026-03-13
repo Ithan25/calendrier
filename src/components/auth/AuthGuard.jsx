@@ -10,7 +10,7 @@ export default function AuthGuard({ children }) {
           <div className="auth-logo-icon" style={{ animation: 'pulse 1.5s ease infinite' }}>
             📅
           </div>
-          <h1 className="gradient-text">Nous Deux</h1>
+          <h1 className="gradient-text">CalenDuo</h1>
           <p style={{ color: 'var(--text-tertiary)' }}>Chargement...</p>
         </div>
       </div>

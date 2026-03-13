@@ -79,7 +79,7 @@ export default function SettingsPage() {
       </div>
       
       <div style={{ textAlign: 'center', color: 'var(--text-tertiary)', fontSize: '10px', marginTop: 'var(--space-8)' }}>
-        Nous Deux — v1.0.0
+        CalenDuo — v1.0.0
       </div>
     </div>
   );
