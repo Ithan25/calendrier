@@ -19,19 +19,31 @@ import EventDetail from './components/events/EventDetail';
 import MealsPage from './components/meals/MealsPage';
 import SettingsPage from './components/settings/SettingsPage';
 
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
 function CalendarViews() {
-  const { viewMode } = useCalendar();
+  const { viewMode, setViewMode } = useCalendar();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === '/agenda' && viewMode !== VIEW_MODES.AGENDA) {
+      setViewMode(VIEW_MODES.AGENDA);
+    } else if (location.pathname === '/' && viewMode === VIEW_MODES.AGENDA) {
+      setViewMode(VIEW_MODES.MONTH);
+    }
+  }, [location.pathname, viewMode, setViewMode]);
 
   return (
     <div className="calendar-page page-enter page-enter-active">
       <TopBar />
       <CalendarHeader />
-      
+
       {viewMode === VIEW_MODES.MONTH && <MonthView />}
       {viewMode === VIEW_MODES.WEEK && <WeekView />}
       {viewMode === VIEW_MODES.DAY && <DayView />}
       {viewMode === VIEW_MODES.AGENDA && <AgendaView />}
-      
+
       <EventModal />
       <EventDetail />
     </div>
@@ -60,7 +72,7 @@ function App() {
           <div className="auth-logo-icon" style={{ animation: 'pulse 1.5s ease infinite' }}>
             📅
           </div>
-          <h1 className="gradient-text">Nous Deux</h1>
+          <h1 className="gradient-text">CalenDuo</h1>
           <p style={{ color: 'var(--text-tertiary)' }}>Chargement...</p>
         </div>
       </div>
