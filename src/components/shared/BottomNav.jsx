@@ -1,15 +1,24 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Calendar, List, Utensils, Settings, Plus } from 'lucide-react';
 import { useCalendar } from '../../contexts/CalendarContext';
 
 export default function BottomNav() {
   const location = useLocation();
+  const navigate = useNavigate();
   const { openNewEvent } = useCalendar();
 
   const isHome = location.pathname === '/';
   const isAgenda = location.pathname === '/agenda';
   const isMeals = location.pathname === '/meals';
   const isSettings = location.pathname === '/settings';
+
+  const handleAddClick = () => {
+    if (isHome || isAgenda) {
+      openNewEvent();
+    } else {
+      navigate('/');
+    }
+  };
 
   return (
     <nav className="bottom-nav">
@@ -23,7 +32,7 @@ export default function BottomNav() {
         <span>Agenda</span>
       </Link>
 
-      <button className="nav-add-btn" onClick={() => openNewEvent()}>
+      <button className="nav-add-btn" onClick={handleAddClick}>
         <Plus size={28} />
       </button>
 

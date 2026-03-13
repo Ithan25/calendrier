@@ -1371,7 +1371,7 @@ input:focus, select:focus, textarea:focus {
   color: white;
   box-shadow: 0 4px 16px rgba(139, 92, 246, 0.4);
   transition: all var(--transition-fast);
-  margin-top: -16px;
+  margin: -16px auto 0 auto;
 }
 
 .nav-add-btn:active {
@@ -1630,6 +1630,42 @@ input:focus, select:focus, textarea:focus {
   color: var(--text-tertiary);
   cursor: pointer;
   padding: var(--space-1);
+}
+
+/* ========================================
+   Tabs / Segmented Control
+   ======================================== */
+.tabs-container {
+  display: flex;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-1);
+  gap: var(--space-1);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.tab-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: var(--font-sm);
+  border-radius: calc(var(--radius-lg) - var(--space-1));
+  transition: all var(--transition-fast);
+}
+
+.tab-btn:hover {
+  color: var(--text-primary);
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--primary-500), var(--accent-500));
+  color: white;
+  box-shadow: 0 4px 10px rgba(139, 92, 246, 0.2);
 }
 
 /* ========================================

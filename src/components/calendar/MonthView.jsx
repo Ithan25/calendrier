@@ -1,11 +1,11 @@
 import { useCalendar } from '../../contexts/CalendarContext';
 import { useAuth } from '../../contexts/AuthContext';
 import { formatDate, isSameMonth, isSameDay, isToday, getMonthDays } from '../../utils/dateUtils';
-import { WEEKDAYS_SHORT } from '../../utils/constants';
+import { WEEKDAYS_SHORT, VIEW_MODES } from '../../utils/constants';
 import { hexToRgba } from '../../utils/colorUtils';
 
 export default function MonthView() {
-  const { selectedDate, setSelectedDate, getEventsForDate, openNewEvent, openEventDetail } = useCalendar();
+  const { selectedDate, setSelectedDate, getEventsForDate, openNewEvent, openEventDetail, setViewMode } = useCalendar();
   const { user } = useAuth();
   const days = getMonthDays(selectedDate);
 
@@ -48,7 +48,8 @@ export default function MonthView() {
                       style={{ backgroundColor: event.color || '#8b5cf6' }}
                       onClick={(e) => {
                         e.stopPropagation();
-                        openEventDetail(event);
+                        setSelectedDate(day);
+                        setViewMode(VIEW_MODES.DAY);
                       }}
                     />
                   ))}
