@@ -51,6 +51,13 @@ export function formatDateRange(start, end, allDay) {
   return `${formatDate(start, 'd MMM HH:mm')} — ${formatDate(end, 'd MMM HH:mm')}`;
 }
 
+export function formatAgendaEventDate(start, end) {
+  if (isSameDay(start, end)) {
+    return formatDate(start, 'd MMMM yyyy');
+  }
+  return `${formatDate(start, 'd MMMM')} au ${formatDate(end, 'd MMMM')}`;
+}
+
 export function getEventTopOffset(date) {
   const hours = getHours(date);
   const minutes = getMinutes(date);

@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useCalendar } from '../../contexts/CalendarContext';
 import { useAuth } from '../../contexts/AuthContext';
-import { formatDate, formatTime, isToday, isSameDay, addDays } from '../../utils/dateUtils';
+import { formatDate, formatTime, isToday, isSameDay, addDays, formatAgendaEventDate } from '../../utils/dateUtils';
 import { getInitials } from '../../utils/colorUtils';
 import { MapPin, CalendarDays } from 'lucide-react';
 
@@ -69,6 +69,9 @@ export default function AgendaView() {
                   {event.allDay ? 'Journée' : formatTime(new Date(event.startDate))}
                 </div>
                 <div className="agenda-event-content">
+                  <div style={{ fontSize: 'var(--font-xs)', color: 'var(--text-tertiary)', marginBottom: 'var(--space-1)' }}>
+                    {formatAgendaEventDate(new Date(event.startDate), new Date(event.endDate))}
+                  </div>
                   <div className="agenda-event-title">{event.title}</div>
                   {event.location && (
                     <div className="agenda-event-location">
