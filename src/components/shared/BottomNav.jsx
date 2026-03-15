@@ -5,7 +5,7 @@ import { useCalendar } from '../../contexts/CalendarContext';
 export default function BottomNav() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { openNewEvent } = useCalendar();
+  const { selectedDate, openNewEvent } = useCalendar();
 
   const isHome = location.pathname === '/';
   const isAgenda = location.pathname === '/agenda';
@@ -14,7 +14,7 @@ export default function BottomNav() {
 
   const handleAddClick = () => {
     if (isHome || isAgenda) {
-      openNewEvent();
+      openNewEvent(selectedDate);
     } else {
       navigate('/');
     }
