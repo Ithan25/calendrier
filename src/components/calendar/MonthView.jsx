@@ -41,20 +41,26 @@ export default function MonthView() {
               <span className="day-number">{day.getDate()}</span>
               {dayEvents.length > 0 && (
                 <div className="day-events">
-                  {dayEvents.slice(0, 3).map((event, j) => (
-                    <span
+                  {dayEvents.slice(0, 5).map((event, j) => (
+                    <div
                       key={j}
-                      className="event-dot"
-                      style={{ backgroundColor: event.color || '#8b5cf6' }}
+                      className="event-bar"
+                      style={{ 
+                        backgroundColor: event.color || '#8b5cf6',
+                        color: 'white'
+                      }}
                       onClick={(e) => {
                         e.stopPropagation();
-                        setSelectedDate(day);
-                        setViewMode(VIEW_MODES.DAY);
+                        openEventDetail(event);
                       }}
-                    />
+                    >
+                      <span className="event-bar-title">{event.title}</span>
+                    </div>
                   ))}
-                  {dayEvents.length > 3 && (
-                    <span className="event-dot" style={{ backgroundColor: 'var(--text-tertiary)' }} />
+                  {dayEvents.length > 5 && (
+                    <div className="event-bar-more">
+                      +{dayEvents.length - 5} autre
+                    </div>
                   )}
                 </div>
               )}
