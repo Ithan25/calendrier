@@ -66,12 +66,13 @@ export default function AgendaView() {
                 onClick={() => openEventDetail(event)}
               >
                 <div className="agenda-event-time">
-                  {event.allDay ? 'Journée' : formatTime(new Date(event.startDate))}
+                  {event.allDay ? (
+                    formatAgendaEventDate(new Date(event.startDate), new Date(event.endDate))
+                  ) : (
+                    formatAgendaEventDate(new Date(event.startDate), new Date(event.endDate))
+                  )}
                 </div>
                 <div className="agenda-event-content">
-                  <div style={{ fontSize: 'var(--font-xs)', color: 'var(--text-tertiary)', marginBottom: 'var(--space-1)' }}>
-                    {formatAgendaEventDate(new Date(event.startDate), new Date(event.endDate))}
-                  </div>
                   <div className="agenda-event-title">{event.title}</div>
                   {event.location && (
                     <div className="agenda-event-location">

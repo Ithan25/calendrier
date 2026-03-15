@@ -744,7 +744,9 @@ textarea:focus {
   flex-direction: column;
   align-items: center;
   padding: var(--space-1);
-  min-height: 52px;
+  min-height: 80px;
+  width: 100%;
+  max-width: 120px;
   cursor: pointer;
   border-radius: var(--radius-sm);
   transition: background var(--transition-fast);
@@ -790,8 +792,8 @@ textarea:focus {
 .day-events {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  margin-top: 3px;
+  gap: 3px;
+  margin-top: 4px;
   width: 100%;
   max-height: 60px;
   overflow: hidden;
@@ -799,9 +801,9 @@ textarea:focus {
 
 .event-bar {
   width: 100%;
-  padding: 1px 3px;
+  padding: 3px 5px;
   border-radius: 2px;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.2s ease, opacity 0.2s ease;
@@ -809,8 +811,8 @@ textarea:focus {
   overflow: hidden;
   text-overflow: ellipsis;
   display: block;
-  line-height: 1;
-  min-height: 16px;
+  line-height: 1.2;
+  min-height: 18px;
 }
 
 .event-bar:active {
