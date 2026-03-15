@@ -49,7 +49,6 @@ export default function MonthView() {
                         openEventDetail(event);
                       }}
                     >
-                      <span className="event-bar-title">{event.title}</span>
                     </div>
                   ))}
                   {dayEvents.length > 5 && (

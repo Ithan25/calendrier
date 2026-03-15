@@ -79,7 +79,6 @@ export default function WeekView() {
                       openEventDetail(event);
                     }}
                   >
-                    <div className="event-block-title">{event.title}</div>
                     <div className="event-block-time">{formatTime(new Date(event.startDate))}</div>
                   </div>
                 );
