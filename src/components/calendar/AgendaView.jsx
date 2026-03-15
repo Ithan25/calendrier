@@ -73,12 +73,6 @@ export default function AgendaView() {
                   )}
                 </div>
                 <div className="agenda-event-content">
-                  <div className="agenda-event-title">{event.title}</div>
-                  {event.location && (
-                    <div className="agenda-event-location">
-                      <MapPin size={12} /> {event.location}
-                    </div>
-                  )}
                   <div className="event-creator">
                     <div
                       className="event-creator-avatar"
