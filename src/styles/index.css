@@ -1025,7 +1025,8 @@ textarea:focus {
 
 .agenda-event {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   gap: var(--space-2);
   padding: var(--space-3) var(--space-3);
   background: var(--bg-secondary);
@@ -1045,24 +1046,23 @@ textarea:focus {
   font-size: var(--font-xs);
   color: var(--text-secondary);
   white-space: nowrap;
-  min-width: 45px;
 }
 
 .agenda-event-content {
   flex: 1;
   min-width: 0;
+  width: 100%;
 }
 
 .agenda-event-title {
   font-weight: 500;
   margin-bottom: 2px;
-  display: none;
 }
 
 .agenda-event-location {
   font-size: var(--font-xs);
   color: var(--text-tertiary);
-  display: none;
+  display: flex;
   align-items: center;
   gap: var(--space-1);
 }
