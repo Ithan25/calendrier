@@ -798,9 +798,9 @@ textarea:focus {
 
 .event-bar {
   width: 100%;
-  padding: 4px 6px;
-  border-radius: 3px;
-  font-size: 11px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-size: 10px;
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.2s ease, opacity 0.2s ease;
@@ -808,7 +808,7 @@ textarea:focus {
   overflow: hidden;
   text-overflow: ellipsis;
   display: block;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 .event-bar:active {

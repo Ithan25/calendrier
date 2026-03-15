@@ -1,20 +1,16 @@
 import { useCalendar } from '../../contexts/CalendarContext';
 import { useAuth } from '../../contexts/AuthContext';
 import { formatDate, isSameMonth, isSameDay, isToday, getMonthDays } from '../../utils/dateUtils';
-import { WEEKDAYS_SHORT, VIEW_MODES } from '../../utils/constants';
+import { WEEKDAYS_SHORT } from '../../utils/constants';
 import { hexToRgba } from '../../utils/colorUtils';
 
 export default function MonthView() {
-  const { selectedDate, setSelectedDate, getEventsForDate, openNewEvent, openEventDetail, setViewMode } = useCalendar();
+  const { selectedDate, setSelectedDate, getEventsForDate, openEventDetail } = useCalendar();
   const { user } = useAuth();
   const days = getMonthDays(selectedDate);
 
   const handleDayClick = (day) => {
     setSelectedDate(day);
-  };
-
-  const handleDayDoubleClick = (day) => {
-    openNewEvent(day);
   };
 
   return (
@@ -36,7 +32,6 @@ export default function MonthView() {
               key={i}
               className={`day-cell${!isCurrentMonth ? ' other-month' : ''}${isTodayDate ? ' today' : ''}${isSelected ? ' selected' : ''}`}
               onClick={() => handleDayClick(day)}
-              onDoubleClick={() => handleDayDoubleClick(day)}
             >
               <span className="day-number">{day.getDate()}</span>
               {dayEvents.length > 0 && (
