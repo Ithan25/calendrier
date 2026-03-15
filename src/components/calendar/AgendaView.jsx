@@ -53,10 +53,8 @@ export default function AgendaView() {
         return (
           <div key={i} className="agenda-day-group" style={{ animationDelay: `${i * 50}ms`, animation: 'fadeInUp 0.3s ease forwards' }}>
             <div className={`agenda-date-header${today ? ' today' : ''}`}>
-              <span className="date-day">{group.date.getDate()}</span>
-              <span className="date-info">
-                {formatDate(group.date, 'EEEE')}{today ? ' · Aujourd\'hui' : ` · ${formatDate(group.date, 'MMMM yyyy')}`}
-              </span>
+              <span className="date-main">{group.date.getDate()} {formatDate(group.date, 'MMMM yyyy')}</span>
+              <span className="date-secondary">{formatDate(group.date, 'EEEE')}{today ? ' · Aujourd\'hui' : ''}</span>
             </div>
             {group.events.map((event) => (
               <div
